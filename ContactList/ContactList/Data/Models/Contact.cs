@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactList.Data.Models
 {
+
     public class Contact
     {
         public int Id { get; set; }

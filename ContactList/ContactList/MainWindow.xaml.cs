@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ContactList.Data.Models;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +22,40 @@ namespace ContactList
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Contact> contacts;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            contacts = new List<Contact>();
+            GetContacts();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void newContactBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NewContactWindow newContactWindow = new NewContactWindow();
+            newContactWindow.ShowDialog();
+            GetContacts();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        void GetContacts()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(App.dbPath))
+            {
+                connection.CreateTable<Contact>();
+                contacts = connection.Table<Contact>().ToList();
+            }
+
+            if(contacts != null)
+            {
+                contactsListView.ItemsSource = contacts;
+            }
         }
     }
 }
