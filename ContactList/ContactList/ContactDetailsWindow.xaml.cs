@@ -49,7 +49,13 @@ namespace ContactList
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
+            using (SQLiteConnection connection = new SQLiteConnection(App.dbPath))
+            {
+                connection.CreateTable<Contact>();
+                connection.Delete(selectedContact);
+            }
 
+            Close();
         }
     }
 }
