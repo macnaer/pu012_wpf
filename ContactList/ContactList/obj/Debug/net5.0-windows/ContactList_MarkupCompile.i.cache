@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\master\Desktop\pu012\ContactList\ContactList\App.xaml
-2-1772605110
+3-1961996713
 
-7997946411
+8-2030047569
 198-1202562139
-MainWindow.xaml;NewContactWindow.xaml;
+ContactDetailsWindow.xaml;MainWindow.xaml;NewContactWindow.xaml;
 
 False
 

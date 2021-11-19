@@ -41,3 +41,5 @@ C:\Users\master\Desktop\pu012\ContactList\ContactList\bin\Debug\net5.0-windows\r
 C:\Users\master\Desktop\pu012\ContactList\ContactList\obj\Debug\net5.0-windows\ContactList.csproj.CopyComplete
 C:\Users\master\Desktop\pu012\ContactList\ContactList\obj\Debug\net5.0-windows\NewContactWindow.g.cs
 C:\Users\master\Desktop\pu012\ContactList\ContactList\obj\Debug\net5.0-windows\NewContactWindow.baml
+C:\Users\master\Desktop\pu012\ContactList\ContactList\obj\Debug\net5.0-windows\ContactDetailsWindow.g.cs
+C:\Users\master\Desktop\pu012\ContactList\ContactList\obj\Debug\net5.0-windows\ContactDetailsWindow.baml

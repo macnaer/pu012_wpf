@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ContactList"
         mc:Ignorable="d"
         Title="NewContactWindow" Height="300" Width="300">
-    <Grid>
+    <Grid Margin="0,0,0,5">
         <StackPanel Margin="10">
             <TextBox Margin="0 0 0 5" x:Name="nameTextBox" />
             <TextBox Margin="0 0 0 5" x:Name="emailTextBox" />
