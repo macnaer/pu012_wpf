@@ -41,7 +41,10 @@ namespace ContactList
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            TextBox searchText = sender as TextBox;
+            string query = searchTextBox.Text.ToLower();
+            var filteredList = contacts.Where(c => c.Name.ToLower().Contains(query)).ToList();
+            contactsListView.ItemsSource = filteredList;
         }
 
         void GetContacts()
