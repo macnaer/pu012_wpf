@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextEditor.View"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="Login" Height="170" Width="300">
     <Grid>
-        
+        <StackPanel Margin="5">
+            <Label Content="User name" Margin="0 0 5 0"/>
+            <TextBox x:Name="nameTextBox" Margin="5 0 5 0"/>
+
+            <Label Content="Password" Margin="0 0 5 0"/>
+            <TextBox x:Name="passwordTextBox" Margin="5 0 5 0"/>
+
+            <Grid Margin="0 5 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button 
+                    x:Name="loginButton"
+                    Content="Login"
+                    Grid.Column="0"
+                    Margin="5 0 5 0"
+                    Click="loginButton_Click"
+                />
+                <Button 
+                    x:Name="registerButton"
+                    Content="Register"
+                    Grid.Column="1"
+                    Margin="5 0 5 0"
+                    Click="registerButton_Click"
+                />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>
