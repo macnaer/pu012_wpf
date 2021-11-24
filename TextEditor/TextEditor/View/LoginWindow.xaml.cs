@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TextEditor.Model;
 using TextEditor.ViewModel.Services;
 
 namespace TextEditor.View
@@ -21,18 +22,29 @@ namespace TextEditor.View
     public partial class LoginWindow : Window
     {
         private readonly UserDbService _userDbService;
-        public LoginWindow(){}
+        public LoginWindow() : this(new UserDbService()) { }
         public LoginWindow(UserDbService userDbService)
         {
             InitializeComponent();
             _userDbService = userDbService;
         }
 
-        private void loginButton_Click(object sender, RoutedEventArgs e)
+        private void  loginButton_Click(object sender, RoutedEventArgs e)
         {
             var login = nameTextBox.Text;
             var password = passwordTextBox.Text;
             var user = _userDbService.LoginUser(login, password);
+
+            if(user != null)
+            {
+                NotesWindow notesWindow = new NotesWindow();
+                notesWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Login or pasword incorrect");
+            }
         }
 
         private void registerButton_Click(object sender, RoutedEventArgs e)
